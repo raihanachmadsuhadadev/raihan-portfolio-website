@@ -1,11 +1,76 @@
 import type { Project } from "@/types";
-import { ArrowUpRight, CheckCircle2, Code2, Layers3 } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { createElement } from "react";
+import type { IconType } from "react-icons";
+import * as SiIcons from "react-icons/si";
 
 type ProjectCardProps = {
   project: Project;
   index?: number;
   variant?: "featured" | "compact";
 };
+
+const groupLabel = {
+  education: "Education Project",
+  freelance: "Freelance Project",
+};
+
+const techIconMap: Record<string, string> = {
+  Laravel: "SiLaravel",
+  "Laravel API": "SiLaravel",
+  PHP: "SiPhp",
+  PostgreSQL: "SiPostgresql",
+  Blade: "SiLaravel",
+  Vite: "SiVite",
+  "Tailwind CSS": "SiTailwindcss",
+  Bootstrap: "SiBootstrap",
+
+  React: "SiReact",
+  "React.js": "SiReact",
+  "Next.js": "SiNextdotjs",
+  TypeScript: "SiTypescript",
+
+  Flask: "SiFlask",
+  Python: "SiPython",
+  "scikit-learn": "SiScikitlearn",
+
+  "Node.js": "SiNodedotjs",
+  "Express.js": "SiExpress",
+  MongoDB: "SiMongodb",
+  Mongoose: "SiMongodb",
+};
+
+function getTechIcon(tech: string): IconType | null {
+  const iconName = techIconMap[tech];
+
+  if (!iconName) {
+    return null;
+  }
+
+  const icons = SiIcons as Record<string, IconType | undefined>;
+  return icons[iconName] ?? null;
+}
+
+function TechIcon({ tech }: { tech: string }) {
+  const Icon = getTechIcon(tech);
+
+  if (!Icon) {
+    return null;
+  }
+
+  return (
+    <span
+      title={tech}
+      aria-label={tech}
+      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-600 transition hover:border-slate-300 hover:bg-white hover:text-slate-950"
+    >
+      {createElement(Icon, {
+        className: "h-4 w-4",
+        "aria-hidden": true,
+      })}
+    </span>
+  );
+}
 
 export function ProjectCard({
   project,
@@ -16,73 +81,53 @@ export function ProjectCard({
 
   return (
     <article
-      className={`group relative flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_25px_70px_rgba(15,23,42,0.1)] ${
-        isCompact ? "" : "min-h-[430px]"
+      className={`group flex h-full flex-col rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)] ${
+        isCompact ? "" : "min-h-[310px]"
       }`}
     >
-      <div className="absolute right-0 top-0 h-28 w-28 rounded-bl-full bg-blue-50 opacity-70 transition group-hover:bg-blue-100" />
-
-      <div className="relative flex items-start justify-between gap-4">
+      <div className="flex items-start justify-between gap-4">
         <div className="flex flex-wrap gap-2">
-          <p className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">
-            <Layers3 className="h-3.5 w-3.5" />
-            {project.category}
-          </p>
+          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
+            {groupLabel[project.group]}
+          </span>
 
-          <p className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
+          <span className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-500">
             {project.status}
-          </p>
+          </span>
         </div>
 
         {typeof index === "number" ? (
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-950 text-sm font-semibold text-white shadow-sm">
+          <span className="text-sm font-semibold text-slate-400">
             {String(index + 1).padStart(2, "0")}
           </span>
         ) : null}
       </div>
 
-      <div className="relative">
-        <h3 className="mt-6 text-2xl font-semibold tracking-tight text-slate-950">
+      <div className="mt-5">
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-slate-400">
+          {project.category}
+        </p>
+
+        <h3 className="mt-3 text-xl font-semibold tracking-tight text-slate-950">
           {project.title}
         </h3>
 
-        <p className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-slate-500">
-          <Code2 className="h-4 w-4" />
+        <p className="mt-2 text-sm font-medium text-slate-500">
           {project.role}
         </p>
 
-        <p className="mt-4 leading-7 text-slate-600">
+        <p className="mt-4 text-sm leading-7 text-slate-600">
           {project.description}
         </p>
-
-        <div className="mt-6">
-          <p className="text-sm font-semibold text-slate-950">
-            Key Highlights
-          </p>
-
-          <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-600">
-            {project.highlights.map((item) => (
-              <li key={item} className="flex gap-3">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="mt-6 flex flex-wrap gap-2">
-          {project.techStack.map((tech) => (
-            <span
-              key={tech}
-              className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-600 transition group-hover:border-slate-300"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
       </div>
 
-      <div className="relative mt-auto flex items-center justify-between border-t border-slate-100 pt-5">
+      <div className="mt-6 flex flex-wrap gap-2">
+        {project.techStack.map((tech) => (
+          <TechIcon key={tech} tech={tech} />
+        ))}
+      </div>
+
+      <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-5">
         <span className="text-sm text-slate-500">Repository</span>
 
         <a
@@ -91,7 +136,7 @@ export function ProjectCard({
           rel="noreferrer"
           className="inline-flex items-center gap-2 text-sm font-semibold text-slate-950 transition hover:text-blue-600"
         >
-          View Project
+          View
           <ArrowUpRight className="h-4 w-4" />
         </a>
       </div>

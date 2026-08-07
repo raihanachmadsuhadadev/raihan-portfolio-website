@@ -24,7 +24,7 @@ export function SectionHeading({
 >
       <p
         className={`mb-3 text-sm font-medium uppercase tracking-[0.25em] ${
-          isDark ? "text-blue-200" : "text-blue-600"
+          isDark ? "text-slate-300" : "text-slate-500"
         }`}
       >
         {label}

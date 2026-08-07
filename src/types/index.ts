@@ -9,6 +9,8 @@ export type ProjectCategory =
 
 export type ProjectType = "featured" | "additional";
 
+export type ProjectGroup = "education" | "freelance";
+
 export type Profile = {
   name: string;
   shortName: string;
@@ -34,6 +36,7 @@ export type Project = {
   techStack: string[];
   repositoryUrl: string;
   category: ProjectCategory;
+  group: ProjectGroup;
   type: ProjectType;
   role: string;
   status: string;
