@@ -17,7 +17,15 @@ export type Profile = {
   email: string;
   github: string;
   linkedin: string;
+  resumeUrl?: string;
   summary: string;
+};
+
+export type SocialLink = {
+  label: string;
+  href: string;
+  description: string;
+  type: "github" | "linkedin" | "email" | "resume";
 };
 
 export type Project = {

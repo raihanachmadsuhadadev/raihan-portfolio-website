@@ -1,6 +1,8 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { profile } from "@/data/profile";
 import { ContactForm } from "./ContactForm";
+import { socialLinks } from "@/data/socialLinks";
+import { ArrowUpRight } from "lucide-react";
 
 const contactFocus = [
   "Web Application Development",
@@ -41,31 +43,23 @@ export function ContactSection() {
               </div>
             </div>
 
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <a
-                href={profile.github}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:bg-white/[0.08]"
-              >
-                <p className="text-sm font-semibold text-white">GitHub</p>
-                <p className="mt-2 text-sm text-slate-400">
-                  View repositories and development work.
-                </p>
-              </a>
-
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:bg-white/[0.08]"
-              >
-                <p className="text-sm font-semibold text-white">LinkedIn</p>
-                <p className="mt-2 text-sm text-slate-400">
-                  Connect for professional opportunities.
-                </p>
-              </a>
-            </div>
+ <div className="mt-6 grid gap-4 sm:grid-cols-2">
+  {socialLinks.map((link) => (
+    <a
+      key={link.label}
+      href={link.href}
+      target={link.type === "email" ? undefined : "_blank"}
+      rel={link.type === "email" ? undefined : "noreferrer"}
+      className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:bg-white/[0.08]"
+    >
+      <p className="inline-flex items-center gap-2 text-sm font-semibold text-white">
+  {link.label}
+  {link.type !== "email" ? <ArrowUpRight className="h-4 w-4" /> : null}
+</p>
+      <p className="mt-2 text-sm text-slate-400">{link.description}</p>
+    </a>
+  ))}
+</div>
 
             <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
               <p className="text-sm font-semibold text-white">

@@ -1,4 +1,13 @@
+import { SocialLinks } from "@/components/ui/SocialLinks";
 import { profile } from "@/data/profile";
+import { resumeLink } from "@/data/socialLinks";
+
+const heroHighlights = [
+  "Web Applications",
+  "Admin Dashboards",
+  "APIs",
+  "Business Systems",
+];
 
 export function HeroSection() {
   return (
@@ -23,6 +32,17 @@ export function HeroSection() {
             business applications.
           </p>
 
+          <div className="mt-6 flex flex-wrap gap-2">
+            {heroHighlights.map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-medium text-slate-600 shadow-sm"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href="#projects"
@@ -37,6 +57,19 @@ export function HeroSection() {
             >
               Contact Me
             </a>
+
+            {resumeLink ? (
+              <a
+                href={resumeLink.href}
+                className="rounded-full border border-slate-300 bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 shadow-sm transition hover:border-slate-400"
+              >
+                Download CV
+              </a>
+            ) : null}
+          </div>
+
+          <div className="mt-8">
+            <SocialLinks />
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3 text-sm text-slate-500">
@@ -75,6 +108,10 @@ export function HeroSection() {
                 <p>
                   <span className="text-blue-300">tools</span>: Laravel,
                   Next.js, PostgreSQL
+                </p>
+                <p>
+                  <span className="text-blue-300">workflow</span>: Code, Docs,
+                  Delivery
                 </p>
               </div>
             </div>
