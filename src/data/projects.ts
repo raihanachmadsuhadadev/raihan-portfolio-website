@@ -17,6 +17,7 @@ export const projects: Project[] = [
     repositoryUrl:
       "https://github.com/raihanachmadsuhadadev/employee-compensation-decision-support-system",
     category: "Decision Support System",
+    group: "education",
     type: "featured",
     role: "Fullstack Developer",
     status: "Completed",
@@ -28,6 +29,25 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: "Grocery Delivery Apps",
+    description:
+      "Grocery delivery web application with customer app, admin panel, Express.js REST API, MongoDB, cart, checkout, orders, and product management.",
+    techStack: ["React", "Vite", "Node.js", "Express.js", "MongoDB", "Mongoose"],
+    repositoryUrl:
+      "https://github.com/raihanachmadsuhadadev/grocery-delivery-apps",
+    category: "Delivery Application",
+    group: "education",
+    type: "featured",
+    role: "Fullstack Developer",
+    status: "Completed",
+    highlights: [
+      "Customer grocery app",
+      "Admin product management",
+      "Cart and checkout flow",
+      "Express.js REST API with MongoDB",
+    ],
+  },
+  {
     title: "Inventory Control System",
     description:
       "Web-based inventory control system for managing products, suppliers, stock transactions, stock monitoring, purchase recommendations, reports, and Excel import.",
@@ -35,6 +55,7 @@ export const projects: Project[] = [
     repositoryUrl:
       "https://github.com/raihanachmadsuhadadev/inventory-control-system",
     category: "Inventory System",
+    group: "freelance",
     type: "featured",
     role: "Fullstack Developer",
     status: "Completed",
@@ -59,6 +80,7 @@ export const projects: Project[] = [
     ],
     repositoryUrl: "https://github.com/raihanachmadsuhadadev/workshop-insight",
     category: "Workshop Management",
+    group: "freelance",
     type: "featured",
     role: "Fullstack Developer",
     status: "Completed",
@@ -83,6 +105,7 @@ export const projects: Project[] = [
     repositoryUrl:
       "https://github.com/raihanachmadsuhadadev/cake-shop-pos-system",
     category: "POS System",
+    group: "freelance",
     type: "featured",
     role: "Fullstack Developer",
     status: "Completed",
@@ -109,6 +132,7 @@ export const projects: Project[] = [
     repositoryUrl:
       "https://github.com/raihanachmadsuhadadev/public-service-report-classification-system",
     category: "Machine Learning",
+    group: "freelance",
     type: "featured",
     role: "Fullstack Developer",
     status: "Completed",
@@ -119,40 +143,23 @@ export const projects: Project[] = [
       "SVM-based priority recommendation",
     ],
   },
-  {
-    title: "Grocery Delivery Apps",
-    description:
-      "Grocery delivery web application with customer app, admin panel, Express.js REST API, MongoDB, cart, checkout, orders, and product management.",
-    techStack: ["React", "Vite", "Node.js", "Express.js", "MongoDB", "Mongoose"],
-    repositoryUrl:
-      "https://github.com/raihanachmadsuhadadev/grocery-delivery-apps",
-    category: "Delivery Application",
-    type: "featured",
-    role: "Fullstack Developer",
-    status: "Completed",
-    highlights: [
-      "Customer grocery app",
-      "Admin product management",
-      "Cart and checkout flow",
-      "Express.js REST API with MongoDB",
-    ],
-  },
-  {
-    title: "HARZNET Company Profile",
-    description:
-      "Company profile website for HARZNET built with Next.js, focused on presenting business information, services, coverage, contact, and brand identity.",
-    techStack: ["Next.js", "React"],
-    repositoryUrl:
-      "https://github.com/raihanachmadsuhadadev/harznet-company-profile",
-    category: "Company Profile",
-    type: "additional",
-    role: "Frontend Developer",
-    status: "In Development",
-    highlights: [
-      "Company profile landing page",
-      "Business information section",
-      "Service and coverage presentation",
-      "Responsive frontend layout",
-    ],
-  },
+ {
+  title: "HARZNET Company Profile",
+  description:
+    "Company profile website for HARZNET built with Next.js, focused on presenting business information, services, coverage, contact, and brand identity.",
+  techStack: ["Next.js", "React", "TypeScript"],
+  repositoryUrl:
+    "https://github.com/raihanachmadsuhadadev/harznet-company-profile",
+  category: "Company Profile",
+  group: "freelance",
+  type: "additional",
+  role: "Frontend Developer",
+  status: "Completed",
+  highlights: [
+    "Company profile landing page",
+    "Business information section",
+    "Service and coverage presentation",
+    "Responsive frontend layout",
+  ],
+},
 ];
