@@ -17,7 +17,11 @@ export function SectionHeading({
   const isDark = theme === "dark";
 
   return (
-    <div className={`mb-10 max-w-3xl ${isCenter ? "mx-auto text-center" : ""}`}>
+    <div
+      className={`mb-10 max-w-3xl ${
+        isCenter ? "mx-auto text-center" : ""
+      }`}
+    >
       <p
         className={`mb-3 text-sm font-medium uppercase tracking-[0.25em] ${
           isDark ? "text-blue-200" : "text-blue-600"
