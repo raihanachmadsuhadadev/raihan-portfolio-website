@@ -6,17 +6,37 @@ import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
+import { Reveal } from "@/components/ui/Reveal";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top,#dbeafe_0,#f8fafc_35%,#f8fafc_100%)] text-slate-950">
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <ExperienceSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ContactSection />
+
+      <Reveal y={16}>
+        <HeroSection />
+      </Reveal>
+
+      <Reveal>
+        <AboutSection />
+      </Reveal>
+
+      <Reveal>
+        <ExperienceSection />
+      </Reveal>
+
+      <Reveal>
+        <SkillsSection />
+      </Reveal>
+
+      <Reveal>
+        <ProjectsSection />
+      </Reveal>
+
+      <Reveal>
+        <ContactSection />
+      </Reveal>
+
       <Footer />
     </main>
   );

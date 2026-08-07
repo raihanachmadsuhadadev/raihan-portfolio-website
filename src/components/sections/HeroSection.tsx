@@ -2,7 +2,7 @@ import { profile } from "@/data/profile";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden px-4 pb-24 pt-36 md:pt-44">
+    <section className="relative overflow-hidden px-4 pb-20 pt-32 sm:pb-24 md:pt-44">
       <div className="absolute left-1/2 top-24 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-200/40 blur-3xl" />
       <div className="absolute right-10 top-48 -z-10 h-64 w-64 rounded-full bg-slate-300/40 blur-3xl" />
 
@@ -13,7 +13,7 @@ export function HeroSection() {
             Available for collaboration
           </div>
 
-          <h1 className="max-w-4xl text-5xl font-semibold tracking-tight text-slate-950 md:text-7xl">
+          <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl md:text-7xl">
             Building digital systems with clean code and clear direction.
           </h1>
 
