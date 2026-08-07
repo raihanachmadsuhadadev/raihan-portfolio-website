@@ -9,6 +9,9 @@ const navItems = [
   { label: "Contact", href: "/#contact" },
 ];
 
+const whatsappNumber = "6285171226279";
+const whatsappUrl = `https://wa.me/${whatsappNumber}`;
+
 export function Navbar() {
   return (
     <header className="fixed left-0 right-0 top-3 z-50 px-3 md:top-4 md:px-4">
@@ -43,13 +46,24 @@ export function Navbar() {
             Work
           </Link>
 
-          <Link
-            href="/#contact"
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noreferrer"
             className="rounded-full bg-slate-950 px-3 py-2 text-xs font-semibold text-white transition hover:bg-slate-800"
           >
             Contact
-          </Link>
+          </a>
         </div>
+
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="hidden rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 md:inline-flex"
+        >
+          Contact Me
+        </a>
       </nav>
     </header>
   );
