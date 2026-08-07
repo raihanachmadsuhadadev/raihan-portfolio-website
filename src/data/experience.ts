@@ -2,6 +2,18 @@ import type { Experience } from "@/types";
 
 export const experiences: Experience[] = [
   {
+    role: "Project Manager",
+    company: "ERP UCIC Project",
+    type: "Project-based",
+    period: "Feb 2026 - Jul 2026",
+    location: "Cirebon, West Java, Indonesia",
+    description: [
+      "Managed project planning, task breakdown, timeline control, and development coordination for the ERP UCIC project.",
+      "Coordinated requirement analysis, feature prioritization, documentation, and communication between project stakeholders and development workflow.",
+      "Supported technical direction, progress tracking, issue follow-up, and delivery preparation across ERP-related modules.",
+    ],
+  },
+  {
     role: "Freelance Fullstack Developer",
     company: "Self-employed",
     type: "Freelance",
@@ -29,7 +41,7 @@ export const experiences: Experience[] = [
     role: "Network Field Supervision Administrator",
     company: "PT Quantum Nusantama",
     type: "Full-time",
-    period: "Oct 2025 - Nov 2025",
+    period: "Sept 2025 - Nov 2025",
     location: "Cirebon, West Java, Indonesia",
     description: [
       "Managed field project administration and network implementation documentation.",
