@@ -27,9 +27,9 @@ export function HeroSection() {
           </h1>
 
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 md:text-lg">
-            I&apos;m {profile.name}, focused on web development, mobile
-            development, AI-assisted workflows, project management, and DevOps
-            fundamentals.
+            I&apos;m {profile.name}, the person behind LUMENIX. I focus on web
+            development, mobile development, AI-assisted workflows, project
+            management, and DevOps fundamentals.
           </p>
 
           <div className="mt-5 flex flex-wrap gap-1.5 md:flex-nowrap">
@@ -60,9 +60,14 @@ export function HeroSection() {
               <div className="mt-8 space-y-4 font-mono text-sm">
                 <p>
                   <span className="text-blue-300">const</span>{" "}
-                  <span className="text-emerald-300">developer</span>{" "}
+                  <span className="text-emerald-300">brand</span>{" "}
                   <span className="text-slate-400">=</span>{" "}
-                  <span className="text-yellow-200">Raihan</span>
+                  <span className="text-yellow-200">LUMENIX</span>
+                </p>
+
+                <p>
+                  <span className="text-blue-300">owner</span>: Raihan Achmad
+                  Suhada
                 </p>
 
                 <p>

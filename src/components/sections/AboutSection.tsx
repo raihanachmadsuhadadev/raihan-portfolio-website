@@ -29,11 +29,14 @@ const workingValues = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-4 pb-16 pt-6 md:pb-20 md:pt-8">
+    <section
+      id="about"
+      className="mx-auto max-w-6xl px-4 pb-6 pt-6 md:pb-8 md:pt-8"
+    >
       <SectionHeading
         label="About"
         title="A developer with technical execution and project direction."
-        description="I focus on building digital products with a balance between clean development, structured documentation, and practical project delivery."
+        description="LUMENIX is my personal brand identity, representing the way I build digital products with clarity, structured execution, and practical delivery."
       />
 
       <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
@@ -49,7 +52,8 @@ export function AboutSection() {
 
           <div className="mt-5 space-y-4 text-base leading-8 text-slate-600">
             <p>
-              I am a Fullstack Developer and Project Manager focused on web
+              I am Raihan Achmad Suhada, the person behind LUMENIX. I work as a
+              Fullstack Developer and Project Manager focused on web
               applications, admin dashboards, APIs, and database-driven systems.
               I enjoy turning ideas and requirements into structured
               applications that are clear, usable, and easier to maintain.
@@ -57,10 +61,11 @@ export function AboutSection() {
 
             <p>
               Beyond coding, I also pay attention to project flow, requirement
-              breakdown, technical documentation, and delivery planning. My
-              current growth direction includes mobile development,
-              AI-assisted workflows, DevOps fundamentals, and cybersecurity
-              basics.
+              breakdown, technical documentation, and delivery planning. Through
+              LUMENIX, I want to present my work with a clear identity that
+              reflects clean execution, practical problem solving, and
+              continuous growth across mobile development, AI-assisted
+              workflows, DevOps fundamentals, and cybersecurity basics.
             </p>
           </div>
         </div>
@@ -76,12 +81,13 @@ export function AboutSection() {
             </h3>
 
             <p className="mt-2 text-sm font-medium text-slate-600">
-              {profile.role}
+              LUMENIX Personal Brand Identity
             </p>
 
             <p className="mt-4 text-sm leading-7 text-slate-500">
               Based in {profile.location}. Focused on building practical
-              digital products with code, documentation, and project clarity.
+              digital products with code, documentation, project clarity, and
+              structured delivery.
             </p>
           </div>
 
