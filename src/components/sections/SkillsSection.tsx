@@ -154,7 +154,7 @@ function TimelinePoint({ index }: { index: number }) {
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="mx-auto max-w-6xl px-4 py-16 md:py-20">
+    <section id="skills" className="mx-auto max-w-6xl px-4 pb-16 pt-4 md:pb-20 md:pt-6">
       <SectionHeading
         label="Skills"
         title="A growing technical stack for building modern digital products."
