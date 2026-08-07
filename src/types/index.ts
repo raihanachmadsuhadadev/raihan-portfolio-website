@@ -14,7 +14,7 @@ export type Profile = {
   shortName: string;
   role: string;
   location: string;
-  email?: string;
+  email: string;
   github: string;
   linkedin: string;
   summary: string;
