@@ -1,12 +1,13 @@
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { profile } from "@/data/profile";
-import { resumeLink } from "@/data/socialLinks";
+
 
 const heroHighlights = [
-  "Web Applications",
-  "Admin Dashboards",
-  "APIs",
-  "Business Systems",
+  "Web Developer",
+  "Mobile Developer",
+  "AI Enthusiast",
+  "Project Manager",
+  "DevOps",
 ];
 
 export function HeroSection() {
@@ -22,62 +23,30 @@ export function HeroSection() {
             Available for collaboration
           </div>
 
-          <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl md:text-7xl">
-            Building digital systems with clean code and clear direction.
-          </h1>
+<h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl md:text-5xl">
+  Building digital systems with clean code and clear direction.
+</h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
-            I&apos;m {profile.name}, a {profile.role} focused on web
-            applications, admin dashboards, APIs, database-driven systems, and
-            business applications.
-          </p>
+          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 md:text-lg">
+  I&apos;m {profile.name}, a {profile.role} focused on web
+  applications, admin dashboards, APIs, database-driven systems, and
+  business applications.
+</p>
 
-          <div className="mt-6 flex flex-wrap gap-2">
-            {heroHighlights.map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-medium text-slate-600 shadow-sm"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
+          <div className="mt-5 flex flex-wrap gap-2 md:flex-nowrap">
+  {heroHighlights.map((item) => (
+    <span
+      key={item}
+      className="rounded-full border border-slate-200 bg-white/80 px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm md:px-3.5 md:text-sm"
+    >
+      {item}
+    </span>
+  ))}
+</div>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#projects"
-              className="rounded-full bg-slate-950 px-6 py-3 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
-            >
-              View Projects
-            </a>
 
-            <a
-              href="#contact"
-              className="rounded-full border border-slate-300 bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 shadow-sm transition hover:border-slate-400"
-            >
-              Contact Me
-            </a>
-
-            {resumeLink ? (
-              <a
-                href={resumeLink.href}
-                className="rounded-full border border-slate-300 bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 shadow-sm transition hover:border-slate-400"
-              >
-                Download CV
-              </a>
-            ) : null}
-          </div>
-
-          <div className="mt-8">
+          <div className="mt-7">
             <SocialLinks />
-          </div>
-
-          <div className="mt-8 flex flex-wrap gap-3 text-sm text-slate-500">
-            <span>{profile.location}</span>
-            <span>•</span>
-            <span>Fullstack Developer</span>
-            <span>•</span>
-            <span>Project Manager</span>
           </div>
         </div>
 
