@@ -1,78 +1,97 @@
 import { ProjectCard } from "@/components/cards/ProjectCard";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { projects } from "@/data/projects";
+import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
-const featuredProjects = projects.filter(
-  (project) => project.type === "featured",
-);
+const educationProjects = projects
+  .filter((project) => project.group === "education")
+  .slice(0, 2);
 
-const additionalProjects = projects.filter(
-  (project) => project.type === "additional",
-);
+const freelanceProjects = projects
+  .filter((project) => project.group === "freelance")
+  .slice(0, 2);
 
-export function ProjectsSection() {
+function ProjectPreviewGroup({
+  title,
+  description,
+  items,
+  startIndex = 0,
+}: {
+  title: string;
+  description: string;
+  items: typeof projects;
+  startIndex?: number;
+}) {
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-4 py-16 md:py-20">
-      <SectionHeading
-        label="Projects"
-        title="Selected projects built around real application needs."
-        description="A collection of web applications, business systems, admin dashboards, APIs, and supporting company profile projects."
-        align="center"
-      />
-
-      <div className="mb-6 flex items-center justify-between gap-4">
-        <div>
-          <p className="text-sm font-medium uppercase tracking-[0.25em] text-blue-600">
-            Featured Work
-          </p>
-          <h3 className="mt-2 text-2xl font-semibold text-slate-950">
-            Main Projects
-          </h3>
-        </div>
-
-        <p className="hidden max-w-sm text-right text-sm leading-6 text-slate-500 md:block">
-          Projects focused on business process, dashboard, API, database, and
-          system-oriented development.
+    <div>
+      <div className="mb-5">
+        <h3 className="text-xl font-semibold text-slate-950">{title}</h3>
+        <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500">
+          {description}
         </p>
       </div>
 
       <div className="grid gap-5 md:grid-cols-2">
-        {featuredProjects.map((project, index) => (
+        {items.map((project, index) => (
           <ProjectCard
             key={project.title}
             project={project}
-            index={index}
-            variant="featured"
+            index={startIndex + index}
+            variant="compact"
           />
         ))}
       </div>
+    </div>
+  );
+}
 
-      {additionalProjects.length > 0 ? (
-        <div className="mt-10">
-          <div className="mb-8">
-            <p className="text-sm font-medium uppercase tracking-[0.25em] text-blue-600">
-              Additional Projects
-            </p>
-            <h3 className="mt-2 text-2xl font-semibold text-slate-950">
-              Supporting Work
-            </h3>
-            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-500">
-              Additional projects that support frontend, landing page, and
-              company profile development experience.
-            </p>
-          </div>
+export function ProjectsSection() {
+  return (
+    <section
+      id="projects"
+      className="mx-auto max-w-6xl px-4 pb-16 pt-4 md:pb-20 md:pt-6"
+    >
+      <div className="mb-10 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+        <div className="max-w-3xl">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-slate-500">
+            Projects
+          </p>
 
-          <div className="grid gap-5 md:grid-cols-2">
-            {additionalProjects.map((project) => (
-              <ProjectCard
-                key={project.title}
-                project={project}
-                variant="compact"
-              />
-            ))}
-          </div>
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+            Selected project work.
+          </h2>
+
+          <p className="mt-3 text-base leading-7 text-slate-600">
+            A short selection of education and freelance projects that represent
+            my work in web applications, admin dashboards, APIs, and
+            database-driven systems.
+          </p>
         </div>
-      ) : null}
+
+        <Link
+          href="/projects"
+          className="inline-flex w-fit items-center gap-2 rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
+        >
+          View All Projects
+          <ArrowUpRight className="h-4 w-4" />
+        </Link>
+      </div>
+
+      <div className="space-y-10">
+        <ProjectPreviewGroup
+          title="Education Projects"
+          description="Projects developed through campus, academic learning, capstone work, and structured education-based development."
+          items={educationProjects}
+          startIndex={0}
+        />
+
+        <ProjectPreviewGroup
+          title="Freelance Projects"
+          description="Projects developed for practical application needs, business workflows, system prototypes, and client-oriented website work."
+          items={freelanceProjects}
+          startIndex={educationProjects.length}
+        />
+      </div>
     </section>
   );
 }
