@@ -11,18 +11,18 @@ const heroHighlights = [
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden px-4 pb-12 pt-28 sm:pb-16 md:pt-36">
+    <section className="relative overflow-hidden px-4 pb-2 pt-28 sm:pb-4 md:pt-34 lg:pt-36">
       <div className="absolute left-1/2 top-24 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-200/40 blur-3xl" />
       <div className="absolute right-10 top-48 -z-10 h-64 w-64 rounded-full bg-slate-300/40 blur-3xl" />
 
-      <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-[1.15fr_0.85fr]">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.05fr_0.95fr]">
         <div>
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-medium text-slate-600 shadow-sm backdrop-blur">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-medium text-slate-600 shadow-sm backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-emerald-500" />
             Available for collaboration
           </div>
 
-          <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-4xl md:text-5xl">
             Building digital systems with clean code and clear direction.
           </h1>
 
