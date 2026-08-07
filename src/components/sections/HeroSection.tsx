@@ -1,7 +1,6 @@
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { profile } from "@/data/profile";
 
-
 const heroHighlights = [
   "Web Developer",
   "Mobile Developer",
@@ -23,27 +22,26 @@ export function HeroSection() {
             Available for collaboration
           </div>
 
-<h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl md:text-5xl">
-  Building digital systems with clean code and clear direction.
-</h1>
+          <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl md:text-5xl lg:text-6xl">
+            Building digital systems with clean code and clear direction.
+          </h1>
 
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 md:text-lg">
-  I&apos;m {profile.name}, a {profile.role} focused on web
-  applications, admin dashboards, APIs, database-driven systems, and
-  business applications.
-</p>
+            I&apos;m {profile.name}, focused on web development, mobile
+            development, AI-assisted workflows, project management, and DevOps
+            fundamentals.
+          </p>
 
-          <div className="mt-5 flex flex-wrap gap-2 md:flex-nowrap">
-  {heroHighlights.map((item) => (
-    <span
-      key={item}
-      className="rounded-full border border-slate-200 bg-white/80 px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm md:px-3.5 md:text-sm"
-    >
-      {item}
-    </span>
-  ))}
-</div>
-
+          <div className="mt-5 flex flex-wrap gap-1.5 md:flex-nowrap">
+            {heroHighlights.map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-slate-200 bg-white/80 px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
 
           <div className="mt-7">
             <SocialLinks />
@@ -66,18 +64,22 @@ export function HeroSection() {
                   <span className="text-slate-400">=</span>{" "}
                   <span className="text-yellow-200">Raihan</span>
                 </p>
+
                 <p>
-                  <span className="text-blue-300">role</span>: Fullstack
-                  Developer
+                  <span className="text-blue-300">roles</span>: Web Developer,
+                  Mobile Developer
                 </p>
+
                 <p>
-                  <span className="text-blue-300">focus</span>: Business
-                  Systems
+                  <span className="text-blue-300">focus</span>: AI-assisted
+                  Workflow, Project Management
                 </p>
+
                 <p>
                   <span className="text-blue-300">tools</span>: Laravel,
                   Next.js, PostgreSQL
                 </p>
+
                 <p>
                   <span className="text-blue-300">workflow</span>: Code, Docs,
                   Delivery
