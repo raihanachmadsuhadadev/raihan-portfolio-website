@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import { profile } from "@/data/profile";
 
 const navItems = [
   { label: "About", href: "/#about" },
@@ -17,13 +17,17 @@ export function Navbar() {
     <header className="fixed left-0 right-0 top-3 z-50 px-3 md:top-4 md:px-4">
       <nav
         aria-label="Main navigation"
-        className="mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-full border border-white/70 bg-white/85 px-4 py-3 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl md:px-5"
+        className="mx-auto flex h-[72px] max-w-6xl items-center justify-between gap-4 rounded-full border border-white/70 bg-white/85 px-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl"
       >
-        <Link
-          href="/"
-          className="shrink-0 text-sm font-bold tracking-tight text-slate-950"
-        >
-          {profile.shortName}
+        <Link href="/" className="flex h-14 w-[210px] shrink-0 items-center">
+          <Image
+            src="/brand/lumenix-logo.png"
+            alt="LUMENIX"
+            width={420}
+            height={140}
+            priority
+            className="h-[52px] w-auto object-contain"
+          />
         </Link>
 
         <div className="hidden items-center gap-1 rounded-full bg-slate-100/80 p-1 md:flex">
