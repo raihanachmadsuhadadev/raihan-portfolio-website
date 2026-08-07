@@ -1,0 +1,112 @@
+import type { SkillGroup } from "@/types";
+
+export const skillGroups: SkillGroup[] = [
+  {
+    category: "Frontend Development",
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "Vue.js",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Vite",
+    ],
+  },
+  {
+    category: "Backend Development",
+    skills: ["PHP", "Laravel", "Node.js", "Express.js", "Golang"],
+  },
+  {
+    category: "Mobile Development",
+    skills: ["Flutter", "Dart", "React Native", "Kotlin"],
+  },
+  {
+    category: "Database",
+    skills: ["PostgreSQL", "MySQL", "MongoDB", "Mongoose"],
+  },
+  {
+    category: "API & Integration",
+    skills: [
+      "REST API",
+      "JSON API",
+      "API Documentation",
+      "API Testing",
+      "Webhook Fundamentals",
+      "Third-Party API Integration",
+      "Insomnia",
+      "Postman",
+    ],
+  },
+  {
+    category: "Authentication & Authorization",
+    skills: [
+      "Laravel Sanctum",
+      "JWT Authentication",
+      "Session-Based Authentication",
+      "Role-Based Access Control",
+      "Permission-Based Access",
+      "Basic OAuth Concepts",
+    ],
+  },
+  {
+    category: "DevOps & Deployment",
+    skills: [
+      "Git",
+      "GitHub",
+      "GitHub Actions",
+      "Docker",
+      "Docker Compose",
+      "Linux Fundamentals",
+      "Nginx",
+      "VPS Deployment",
+      "Domain Configuration",
+      "SSL Configuration",
+      "CI/CD Fundamentals",
+    ],
+  },
+  {
+    category: "Security & Pentesting Fundamentals",
+    skills: [
+      "OWASP Top 10",
+      "Web Application Security Basics",
+      "API Security Basics",
+      "Burp Suite",
+      "Nmap",
+      "Nikto",
+      "SQLMap",
+      "Kali Linux Basics",
+    ],
+  },
+  {
+    category: "AI Tools & Workflow",
+    skills: [
+      "ChatGPT",
+      "Claude",
+      "OpenAI Codex",
+      "Cursor",
+      "Claude Code",
+      "Stitch AI",
+      "Claude Design",
+    ],
+  },
+  {
+    category: "Development Tools",
+    skills: [
+      "VS Code",
+      "Antigravity IDE",
+      "Composer",
+      "NPM",
+      "PNPM",
+      "Docker Desktop",
+      "DBeaver",
+      "PGAdmin4",
+      "MongoDB Atlas",
+      "Figma",
+      "Android Studio",
+    ],
+  },
+];
