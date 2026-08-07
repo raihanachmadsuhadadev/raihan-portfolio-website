@@ -23,11 +23,11 @@ export default function Home() {
       </Reveal>
 
       <Reveal>
-        <ExperienceSection />
+        <SkillsSection />
       </Reveal>
 
       <Reveal>
-        <SkillsSection />
+        <ExperienceSection />
       </Reveal>
 
       <Reveal>
