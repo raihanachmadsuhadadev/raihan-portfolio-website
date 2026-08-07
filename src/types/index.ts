@@ -7,6 +7,8 @@ export type ProjectCategory =
   | "Delivery Application"
   | "Company Profile";
 
+export type ProjectType = "featured" | "additional";
+
 export type Profile = {
   name: string;
   shortName: string;
@@ -24,6 +26,10 @@ export type Project = {
   techStack: string[];
   repositoryUrl: string;
   category: ProjectCategory;
+  type: ProjectType;
+  role: string;
+  status: string;
+  highlights: string[];
 };
 
 export type SkillGroup = {

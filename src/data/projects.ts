@@ -17,6 +17,15 @@ export const projects: Project[] = [
     repositoryUrl:
       "https://github.com/raihanachmadsuhadadev/employee-compensation-decision-support-system",
     category: "Decision Support System",
+    type: "featured",
+    role: "Fullstack Developer",
+    status: "Completed",
+    highlights: [
+      "KPI evaluation workflow",
+      "AHP-based weighting",
+      "Peer assessment",
+      "Salary and bonus recommendation",
+    ],
   },
   {
     title: "Inventory Control System",
@@ -26,6 +35,15 @@ export const projects: Project[] = [
     repositoryUrl:
       "https://github.com/raihanachmadsuhadadev/inventory-control-system",
     category: "Inventory System",
+    type: "featured",
+    role: "Fullstack Developer",
+    status: "Completed",
+    highlights: [
+      "Product and supplier management",
+      "Stock transaction tracking",
+      "Purchase recommendation",
+      "Report and Excel import",
+    ],
   },
   {
     title: "Workshop Insight",
@@ -41,15 +59,39 @@ export const projects: Project[] = [
     ],
     repositoryUrl: "https://github.com/raihanachmadsuhadadev/workshop-insight",
     category: "Workshop Management",
+    type: "featured",
+    role: "Fullstack Developer",
+    status: "Completed",
+    highlights: [
+      "Workshop transaction management",
+      "Spare part and stock management",
+      "Transaction pattern analysis",
+      "Service package recommendation",
+    ],
   },
   {
     title: "Cake Shop POS System",
     description:
       "Web-based POS and pre-order system for cake shop products, orders, payment proof upload, ingredient stock, FIFO usage, production queue, and reports.",
-    techStack: ["Laravel API", "Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
+    techStack: [
+      "Laravel API",
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Tailwind CSS",
+    ],
     repositoryUrl:
       "https://github.com/raihanachmadsuhadadev/cake-shop-pos-system",
     category: "POS System",
+    type: "featured",
+    role: "Fullstack Developer",
+    status: "Completed",
+    highlights: [
+      "Product and order management",
+      "Payment proof upload",
+      "Ingredient stock tracking",
+      "FIFO usage and production queue",
+    ],
   },
   {
     title: "Public Service Report Classification System",
@@ -67,6 +109,15 @@ export const projects: Project[] = [
     repositoryUrl:
       "https://github.com/raihanachmadsuhadadev/public-service-report-classification-system",
     category: "Machine Learning",
+    type: "featured",
+    role: "Fullstack Developer",
+    status: "Completed",
+    highlights: [
+      "Citizen report submission",
+      "Admin report management",
+      "Status tracking",
+      "SVM-based priority recommendation",
+    ],
   },
   {
     title: "Grocery Delivery Apps",
@@ -76,6 +127,15 @@ export const projects: Project[] = [
     repositoryUrl:
       "https://github.com/raihanachmadsuhadadev/grocery-delivery-apps",
     category: "Delivery Application",
+    type: "featured",
+    role: "Fullstack Developer",
+    status: "Completed",
+    highlights: [
+      "Customer grocery app",
+      "Admin product management",
+      "Cart and checkout flow",
+      "Express.js REST API with MongoDB",
+    ],
   },
   {
     title: "HARZNET Company Profile",
@@ -85,5 +145,14 @@ export const projects: Project[] = [
     repositoryUrl:
       "https://github.com/raihanachmadsuhadadev/harznet-company-profile",
     category: "Company Profile",
+    type: "additional",
+    role: "Frontend Developer",
+    status: "In Development",
+    highlights: [
+      "Company profile landing page",
+      "Business information section",
+      "Service and coverage presentation",
+      "Responsive frontend layout",
+    ],
   },
 ];
