@@ -1,6 +1,9 @@
 import { profile } from "@/data/profile";
 import { socialLinks } from "@/data/socialLinks";
 import { ArrowUpRight } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
+
+const whatsappNumber = "6285171226279";
 
 export function Footer() {
   return (
@@ -28,6 +31,16 @@ export function Footer() {
               ) : null}
             </a>
           ))}
+
+          <a
+            href={`https://wa.me/${whatsappNumber}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 transition hover:text-slate-950"
+          >
+            WhatsApp
+            <FaWhatsapp className="h-3.5 w-3.5" />
+          </a>
         </div>
 
         <p className="text-sm text-slate-500">
