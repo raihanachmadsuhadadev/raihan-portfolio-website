@@ -11,7 +11,7 @@ const heroHighlights = [
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden px-4 pb-20 pt-32 sm:pb-24 md:pt-44">
+    <section className="relative overflow-hidden px-4 pb-12 pt-28 sm:pb-16 md:pt-36">
       <div className="absolute left-1/2 top-24 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-200/40 blur-3xl" />
       <div className="absolute right-10 top-48 -z-10 h-64 w-64 rounded-full bg-slate-300/40 blur-3xl" />
 

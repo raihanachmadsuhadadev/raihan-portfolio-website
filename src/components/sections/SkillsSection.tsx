@@ -154,7 +154,7 @@ function TimelinePoint({ index }: { index: number }) {
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="mx-auto max-w-6xl px-4 py-24">
+    <section id="skills" className="mx-auto max-w-6xl px-4 py-16 md:py-20">
       <SectionHeading
         label="Skills"
         title="A growing technical stack for building modern digital products."
@@ -165,7 +165,7 @@ export function SkillsSection() {
       <div className="relative">
         <div className="absolute left-4 top-0 h-full w-px bg-slate-200 lg:left-1/2 lg:-translate-x-1/2" />
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {skillGroups.map((group, index) => {
             const isLeft = index % 2 === 0;
 
@@ -205,7 +205,7 @@ export function SkillsSection() {
         </div>
       </div>
 
-      <div className="mt-12 rounded-[2rem] border border-slate-200 bg-white p-6 text-center shadow-sm">
+      <div className="mt-8 rounded-[2rem] border border-slate-200 bg-white p-6 text-center shadow-sm">
         <p className="text-sm leading-7 text-slate-600">
           I keep improving my technical foundation through real projects,
           documentation, deployment practice, and AI-assisted development

@@ -18,7 +18,7 @@ const stats = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-4 py-24">
+    <section id="about" className="mx-auto max-w-6xl px-4 py-16 md:py-20">
       <SectionHeading
         label="About"
         title="I build digital products with clear structure, practical execution, and business context."

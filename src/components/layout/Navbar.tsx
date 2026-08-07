@@ -11,7 +11,10 @@ const navItems = [
 export function Navbar() {
   return (
     <header className="fixed left-0 right-0 top-3 z-50 px-3 md:top-4 md:px-4">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-full border border-white/70 bg-white/85 px-4 py-3 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl md:px-5">
+      <nav
+  aria-label="Main navigation"
+  className="mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-full border border-white/70 bg-white/85 px-4 py-3 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl md:px-5"
+>
         <a
           href="#"
           className="shrink-0 text-sm font-bold tracking-tight text-slate-950"

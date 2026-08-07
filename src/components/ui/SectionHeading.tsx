@@ -18,10 +18,10 @@ export function SectionHeading({
 
   return (
     <div
-      className={`mb-10 max-w-3xl ${
-        isCenter ? "mx-auto text-center" : ""
-      }`}
-    >
+  className={`mb-8 max-w-3xl ${
+    isCenter ? "mx-auto text-center" : ""
+  }`}
+>
       <p
         className={`mb-3 text-sm font-medium uppercase tracking-[0.25em] ${
           isDark ? "text-blue-200" : "text-blue-600"
@@ -40,7 +40,7 @@ export function SectionHeading({
 
       {description ? (
         <p
-          className={`mt-4 text-base leading-7 ${
+          className={`mt-3 text-base leading-7 ${
             isDark ? "text-slate-300" : "text-slate-600"
           }`}
         >

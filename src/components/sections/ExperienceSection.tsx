@@ -3,7 +3,7 @@ import { experiences } from "@/data/experience";
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="mx-auto max-w-6xl px-4 py-24">
+    <section id="experience" className="mx-auto max-w-6xl px-4 py-16 md:py-20">
       <SectionHeading
         label="Experience"
         title="Professional experience across development, documentation, and IT operations."
@@ -13,7 +13,7 @@ export function ExperienceSection() {
       <div className="relative">
         <div className="absolute left-4 top-0 hidden h-full w-px bg-slate-200 md:block" />
 
-        <div className="space-y-6">
+        <div className="space-y-5">
           {experiences.map((experience, index) => (
             <article
               key={`${experience.role}-${experience.company}`}

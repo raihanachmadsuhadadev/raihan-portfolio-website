@@ -12,7 +12,7 @@ const additionalProjects = projects.filter(
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-4 py-24">
+    <section id="projects" className="mx-auto max-w-6xl px-4 py-16 md:py-20">
       <SectionHeading
         label="Projects"
         title="Selected projects built around real application needs."
@@ -20,7 +20,7 @@ export function ProjectsSection() {
         align="center"
       />
 
-      <div className="mb-8 flex items-center justify-between gap-4">
+      <div className="mb-6 flex items-center justify-between gap-4">
         <div>
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-blue-600">
             Featured Work
@@ -48,7 +48,7 @@ export function ProjectsSection() {
       </div>
 
       {additionalProjects.length > 0 ? (
-        <div className="mt-16">
+        <div className="mt-10">
           <div className="mb-8">
             <p className="text-sm font-medium uppercase tracking-[0.25em] text-blue-600">
               Additional Projects

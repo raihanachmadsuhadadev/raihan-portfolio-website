@@ -15,9 +15,9 @@ const contactFocus = [
 
 export function ContactSection() {
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-4 py-24">
+    <section id="contact" className="mx-auto max-w-6xl px-4 py-16 md:py-20">
       <div className="overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-950 shadow-[0_30px_90px_rgba(15,23,42,0.22)]">
-        <div className="grid gap-8 p-8 lg:grid-cols-[1fr_0.9fr] lg:p-12">
+        <div className="grid gap-6 p-6 md:p-8 lg:grid-cols-[1fr_0.9fr] lg:p-10">
           <div>
             <SectionHeading
               label="Contact"
