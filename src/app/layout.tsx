@@ -2,13 +2,17 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Raihan Achmad Suhada | Fullstack Developer & Project Manager",
+  title: "LUMENIX | Raihan Achmad Suhada",
   description:
-    "Personal portfolio website of Raihan Achmad Suhada, a Fullstack Developer and Project Manager focused on web applications, admin dashboards, APIs, database-driven systems, and business applications.",
+    "Personal portfolio of Raihan Achmad Suhada under the LUMENIX identity, focused on web development, business systems, project management, AI-assisted workflows, and digital product delivery.",
   keywords: [
+    "LUMENIX",
     "Raihan Achmad Suhada",
     "Fullstack Developer",
     "Project Manager",
+    "Web Developer",
+    "Mobile Developer",
+    "AI Enthusiast",
     "Laravel Developer",
     "Next.js Developer",
     "React Developer",
@@ -17,14 +21,34 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Raihan Achmad Suhada" }],
   creator: "Raihan Achmad Suhada",
+  icons: {
+    icon: "/brand/lumenix-icon.png",
+    shortcut: "/brand/lumenix-icon.png",
+    apple: "/brand/lumenix-icon.png",
+  },
   openGraph: {
-    title: "Raihan Achmad Suhada | Fullstack Developer & Project Manager",
+    title: "LUMENIX | Raihan Achmad Suhada",
     description:
-      "Fullstack Developer and Project Manager focused on web applications, admin dashboards, APIs, database-driven systems, and business applications.",
+      "LUMENIX is the personal brand identity of Raihan Achmad Suhada, representing his work in web development, business systems, project management, AI-assisted workflows, and digital product delivery.",
     type: "website",
     locale: "en_US",
   },
 };
+
+const themeScript = `
+(function () {
+  try {
+    var theme = localStorage.getItem("theme");
+    var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (theme === "dark" || (!theme && systemDark)) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  } catch (error) {}
+})();
+`;
 
 export default function RootLayout({
   children,
@@ -32,7 +56,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>{children}</body>
     </html>
   );

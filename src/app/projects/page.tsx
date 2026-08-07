@@ -53,7 +53,7 @@ function ProjectGroupSection({
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,#dbeafe_0,#f8fafc_35%,#f8fafc_100%)] text-slate-950">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top,#dbeafe_0,#f8fafc_35%,#f8fafc_100%)] text-slate-950 dark:bg-[radial-gradient(circle_at_top,#0f172a_0,#020617_45%,#020617_100%)] dark:text-slate-50">
       <Navbar />
 
       <section className="mx-auto max-w-6xl px-4 pb-10 pt-28 md:pb-12 md:pt-36">

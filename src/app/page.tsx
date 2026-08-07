@@ -11,7 +11,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,#dbeafe_0,#f8fafc_35%,#f8fafc_100%)] text-slate-950">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top,#dbeafe_0,#f8fafc_35%,#f8fafc_100%)] text-slate-950 dark:bg-[radial-gradient(circle_at_top,#0f172a_0,#020617_45%,#020617_100%)] dark:text-slate-50">
       <Navbar />
 
       <Reveal y={16}>
