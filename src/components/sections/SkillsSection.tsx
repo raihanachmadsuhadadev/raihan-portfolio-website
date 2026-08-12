@@ -22,6 +22,8 @@ const skillIconMap: Record<string, string> = {
   Laravel: "SiLaravel",
   "Node.js": "SiNodedotjs",
   "Express.js": "SiExpress",
+  Python: "SiPython",
+  Flask: "SiFlask",
   Golang: "SiGo",
 
   Flutter: "SiFlutter",
@@ -32,10 +34,17 @@ const skillIconMap: Record<string, string> = {
   PostgreSQL: "SiPostgresql",
   MySQL: "SiMysql",
   MongoDB: "SiMongodb",
-  Mongoose: "SiMongoose",
+  Mongoose: "SiMongodb",
+
+  "scikit-learn": "SiPython",
+  "SVM Classification": "SiPython",
+  "Model Integration": "SiOpenapiinitiative",
 
   "REST API": "SiOpenapiinitiative",
   "JSON API": "SiJson",
+  "API Documentation": "SiSwagger",
+  "API Testing": "SiPostman",
+  "Third-Party API Integration": "SiOpenapiinitiative",
   "Laravel Sanctum": "SiLaravel",
   "JWT Authentication": "SiJsonwebtokens",
   "Basic OAuth Concepts": "SiAuth0",
@@ -91,7 +100,7 @@ function SkillBadge({ skill }: { skill: string }) {
   const Icon = getSkillIcon(skill);
 
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-600 transition hover:border-slate-300 hover:bg-white">
+    <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-600 transition hover:border-slate-300 hover:bg-white dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:border-slate-600 dark:hover:bg-slate-900 dark:hover:text-white">
       {Icon
         ? createElement(Icon, {
             className: "h-3.5 w-3.5 shrink-0",
@@ -111,20 +120,20 @@ function SkillTimelineCard({
   index: number;
 }) {
   return (
-    <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+    <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)] dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">
+          <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-blue-600 dark:bg-blue-500/10 dark:text-blue-300">
             <Layers3 className="h-3.5 w-3.5" />
             Skill Group
           </p>
 
-          <h3 className="text-xl font-semibold tracking-tight text-slate-950">
+          <h3 className="text-xl font-semibold tracking-tight text-slate-950 dark:text-white">
             {group.category}
           </h3>
         </div>
 
-        <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-500">
+        <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-500 dark:bg-slate-800 dark:text-slate-300">
           {group.skills.length}
         </span>
       </div>
@@ -135,7 +144,7 @@ function SkillTimelineCard({
         ))}
       </div>
 
-      <p className="mt-5 text-xs font-medium uppercase tracking-[0.2em] text-slate-400">
+      <p className="mt-5 text-xs font-medium uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">
         #{String(index + 1).padStart(2, "0")}
       </p>
     </div>
@@ -145,7 +154,7 @@ function SkillTimelineCard({
 function TimelinePoint({ index }: { index: number }) {
   return (
     <div className="relative z-10 hidden items-center justify-center lg:flex">
-      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-sm font-semibold text-slate-950 shadow-sm">
+      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-sm font-semibold text-slate-950 shadow-sm dark:border-slate-700 dark:bg-slate-900 dark:text-white">
         {String(index + 1).padStart(2, "0")}
       </div>
     </div>
@@ -154,16 +163,19 @@ function TimelinePoint({ index }: { index: number }) {
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="mx-auto max-w-6xl px-4 pb-16 pt-4 md:pb-20 md:pt-6">
+    <section
+      id="skills"
+      className="mx-auto max-w-6xl px-4 pb-16 pt-4 md:pb-20 md:pt-6"
+    >
       <SectionHeading
         label="Skills"
         title="A growing technical stack for building modern digital products."
-        description="My current skill set covers frontend, backend, database, API integration, deployment fundamentals, security basics, AI-assisted workflow, and development tools."
+        description="My current skill set covers frontend, backend, mobile development, database, API integration, deployment fundamentals, security basics, AI-assisted workflow, machine learning fundamentals, and development tools."
         align="center"
       />
 
       <div className="relative">
-        <div className="absolute left-4 top-0 h-full w-px bg-slate-200 lg:left-1/2 lg:-translate-x-1/2" />
+        <div className="absolute left-4 top-0 h-full w-px bg-slate-200 dark:bg-slate-700 lg:left-1/2 lg:-translate-x-1/2" />
 
         <div className="space-y-6">
           {skillGroups.map((group, index) => {
@@ -174,7 +186,7 @@ export function SkillsSection() {
                 key={group.category}
                 className="relative grid gap-4 pl-12 lg:grid-cols-[1fr_80px_1fr] lg:items-center lg:gap-0 lg:pl-0"
               >
-                <div className="absolute left-0 top-8 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-semibold text-slate-950 shadow-sm lg:hidden">
+                <div className="absolute left-0 top-8 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-semibold text-slate-950 shadow-sm dark:border-slate-700 dark:bg-slate-900 dark:text-white lg:hidden">
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
@@ -205,8 +217,8 @@ export function SkillsSection() {
         </div>
       </div>
 
-      <div className="mt-8 rounded-[2rem] border border-slate-200 bg-white p-6 text-center shadow-sm">
-        <p className="text-sm leading-7 text-slate-600">
+      <div className="mt-8 rounded-[2rem] border border-slate-200 bg-white p-6 text-center shadow-sm dark:border-slate-700 dark:bg-slate-900">
+        <p className="text-sm leading-7 text-slate-600 dark:text-slate-300">
           I keep improving my technical foundation through real projects,
           documentation, deployment practice, and AI-assisted development
           workflow.

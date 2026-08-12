@@ -18,7 +18,15 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: "Backend Development",
-    skills: ["PHP", "Laravel", "Node.js", "Express.js", "Golang"],
+    skills: [
+      "PHP",
+      "Laravel",
+      "Node.js",
+      "Express.js",
+      "Python",
+      "Flask",
+      "Golang",
+    ],
   },
   {
     category: "Mobile Development",
@@ -27,6 +35,16 @@ export const skillGroups: SkillGroup[] = [
   {
     category: "Database",
     skills: ["PostgreSQL", "MySQL", "MongoDB", "Mongoose"],
+  },
+  {
+    category: "AI & Machine Learning Fundamentals",
+    skills: [
+      "Python",
+      "Flask",
+      "scikit-learn",
+      "SVM Classification",
+      "Model Integration",
+    ],
   },
   {
     category: "API & Integration",

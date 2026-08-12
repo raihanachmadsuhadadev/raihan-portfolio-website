@@ -8,6 +8,7 @@ import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
 import { BackToTopButton } from "@/components/ui/BackToTopButton";
 import { Reveal } from "@/components/ui/Reveal";
+import { CertificatesSection } from "@/components/sections/CertificatesSection";
 
 export default function Home() {
   return (
@@ -28,6 +29,10 @@ export default function Home() {
 
       <Reveal>
         <ExperienceSection />
+      </Reveal>
+
+      <Reveal>
+        <CertificatesSection />
       </Reveal>
 
       <Reveal>
