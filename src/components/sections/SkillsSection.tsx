@@ -1,10 +1,10 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { skillGroups } from "@/data/skills";
 import type { SkillGroup } from "@/types";
-import { Layers3 } from "lucide-react";
 import { createElement } from "react";
 import type { IconType } from "react-icons";
 import * as SiIcons from "react-icons/si";
+import { RevealItem, StaggerReveal } from "@/components/ui/Reveal";
 
 const skillIconMap: Record<string, string> = {
   HTML: "SiHtml5",
@@ -123,11 +123,6 @@ function SkillTimelineCard({
     <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)] dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-blue-600 dark:bg-blue-500/10 dark:text-blue-300">
-            <Layers3 className="h-3.5 w-3.5" />
-            Skill Group
-          </p>
-
           <h3 className="text-xl font-semibold tracking-tight text-slate-950 dark:text-white">
             {group.category}
           </h3>
@@ -177,12 +172,12 @@ export function SkillsSection() {
       <div className="relative">
         <div className="absolute left-4 top-0 h-full w-px bg-slate-200 dark:bg-slate-700 lg:left-1/2 lg:-translate-x-1/2" />
 
-        <div className="space-y-6">
+        <StaggerReveal className="space-y-6">
           {skillGroups.map((group, index) => {
             const isLeft = index % 2 === 0;
 
             return (
-              <div
+              <RevealItem
                 key={group.category}
                 className="relative grid gap-4 pl-12 lg:grid-cols-[1fr_80px_1fr] lg:items-center lg:gap-0 lg:pl-0"
               >
@@ -211,10 +206,10 @@ export function SkillsSection() {
                     </div>
                   </>
                 )}
-              </div>
+              </RevealItem>
             );
           })}
-        </div>
+        </StaggerReveal>
       </div>
 
       <div className="mt-8 rounded-[2rem] border border-slate-200 bg-white p-6 text-center shadow-sm dark:border-slate-700 dark:bg-slate-900">

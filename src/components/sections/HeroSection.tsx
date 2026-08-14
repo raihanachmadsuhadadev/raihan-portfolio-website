@@ -28,7 +28,7 @@ export function HeroSection() {
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 md:mx-0 md:text-lg dark:text-slate-300">
-            I&apos;m {profile.name}, the person behind LUMENIX. I focus on web
+            I&apos;m {profile.name}, the person behind Ravion. I focus on web
             development, mobile development, AI-assisted workflows, project
             management, and DevOps fundamentals.
           </p>
@@ -65,12 +65,12 @@ export function HeroSection() {
 
             <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-slate-200/60 dark:ring-slate-700/70" />
 
-            <div className="absolute -bottom-5 left-1/2 z-10 w-[230px] -translate-x-1/2 rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left shadow-xl sm:w-max md:-bottom-6 md:left-auto md:right-[-28px] md:translate-x-0 dark:border-slate-700 dark:bg-slate-900">
+            <div className="absolute -bottom-5 left-1/2 z-10 w-[250px] -translate-x-1/2 rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left shadow-xl sm:w-max md:-bottom-6 md:left-auto md:right-[-28px] md:translate-x-0 dark:border-slate-700 dark:bg-slate-900">
               <p className="text-sm font-semibold text-slate-950 dark:text-white">
-                Project-minded Developer
+                Ravion
               </p>
               <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                Code · Docs · Delivery
+                Raihan Innovation &amp; Technology
               </p>
             </div>
           </div>

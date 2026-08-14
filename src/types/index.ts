@@ -5,11 +5,18 @@ export type ProjectCategory =
   | "POS System"
   | "Machine Learning"
   | "Delivery Application"
-  | "Company Profile";
+  | "Company Profile"
+  | "Frontend Fundamentals"
+  | "Backend API"
+  | "Mobile Development"
+  | "AI Integration"
+  | "Fullstack Application"
+  | "Real-time Application"
+  | "Data Processing";
 
 export type ProjectType = "featured" | "additional";
 
-export type ProjectGroup = "education" | "freelance";
+export type ProjectGroup = "education" | "mini" | "freelance";
 
 export type Profile = {
   name: string;

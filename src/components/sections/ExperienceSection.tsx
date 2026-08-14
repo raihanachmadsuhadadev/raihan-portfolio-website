@@ -1,6 +1,7 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { experiences } from "@/data/experience";
 import { BriefcaseBusiness, CalendarDays, MapPin } from "lucide-react";
+import { RevealItem, StaggerReveal } from "@/components/ui/Reveal";
 
 export function ExperienceSection() {
   return (
@@ -18,12 +19,12 @@ export function ExperienceSection() {
       <div className="relative mx-auto max-w-5xl">
         <div className="absolute left-4 top-0 h-full w-px bg-slate-200 md:left-1/2 md:-translate-x-1/2" />
 
-        <div className="space-y-6">
+        <StaggerReveal className="space-y-6">
           {experiences.map((experience, index) => {
             const isLeft = index % 2 === 0;
 
             return (
-              <article
+              <RevealItem
                 key={`${experience.role}-${experience.company}`}
                 className="relative grid gap-4 pl-12 md:grid-cols-[1fr_72px_1fr] md:items-start md:gap-0 md:pl-0"
               >
@@ -44,10 +45,10 @@ export function ExperienceSection() {
                     <ExperienceCard experience={experience} />
                   </>
                 )}
-              </article>
+              </RevealItem>
             );
           })}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

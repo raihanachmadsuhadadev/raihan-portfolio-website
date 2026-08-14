@@ -6,6 +6,7 @@ const navItems = [
   { label: "About", href: "/#about" },
   { label: "Skills", href: "/#skills" },
   { label: "Experience", href: "/#experience" },
+  { label: "Education", href: "/#education" },
   { label: "Certificates", href: "/certificates" },
   { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/#contact" },
@@ -23,17 +24,30 @@ export function Navbar() {
       >
         <Link
           href="/"
-          className="flex min-w-0 shrink-0 items-center"
+          className="flex min-w-0 shrink-0 items-center gap-2"
           aria-label="Go to homepage"
         >
           <Image
-            src="/brand/lumenix-logo.png"
-            alt="LUMENIX"
-            width={420}
-            height={140}
+            src="/brand/ravion-icon-light.png"
+            alt="Ravion"
+            width={48}
+            height={48}
             priority
-            className="h-10 w-auto object-contain sm:h-11 md:h-[52px]"
+            className="h-10 w-10 object-contain dark:hidden sm:h-11 sm:w-11 md:h-12 md:w-12"
           />
+
+          <Image
+            src="/brand/ravion-icon-dark.png"
+            alt="Ravion"
+            width={48}
+            height={48}
+            priority
+            className="hidden h-10 w-10 object-contain dark:block sm:h-11 sm:w-11 md:h-12 md:w-12"
+          />
+
+          <span className="text-lg font-semibold tracking-tight text-slate-950 dark:text-white sm:text-xl">
+            Ravion
+          </span>
         </Link>
 
         <div className="hidden items-center gap-1 rounded-full bg-slate-100/80 p-1 md:flex dark:bg-slate-900/80">
@@ -41,7 +55,7 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-white hover:text-slate-950 hover:shadow-sm dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white"
+              className="rounded-full px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-white hover:text-slate-950 hover:shadow-sm dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white"
             >
               {item.label}
             </Link>

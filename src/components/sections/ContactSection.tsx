@@ -10,6 +10,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { profile } from "@/data/profile";
 import { FiMail, FiMapPin, FiSend } from "react-icons/fi";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
+import { Reveal, RevealItem, StaggerReveal } from "@/components/ui/Reveal";
 
 const contactFocus = [
   "In Office",
@@ -59,8 +60,9 @@ export function ContactSection() {
       id="contact"
       className="mx-auto max-w-6xl px-4 pb-16 pt-4 md:pb-20 md:pt-6"
     >
-      <div className="rounded-[2.25rem] border border-slate-200 bg-slate-950 p-5 shadow-[0_25px_80px_rgba(15,23,42,0.16)] md:p-8">
-        <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+      <Reveal className="rounded-[2.25rem] border border-slate-200 bg-slate-950 p-5 shadow-[0_25px_80px_rgba(15,23,42,0.16)] md:p-8">
+        <StaggerReveal className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+          <RevealItem>
           <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 md:p-7">
             <SectionHeading
               label="Contact"
@@ -147,7 +149,9 @@ export function ContactSection() {
               </div>
             </div>
           </div>
+          </RevealItem>
 
+          <RevealItem>
           <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 md:p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
               Send Message
@@ -234,8 +238,9 @@ export function ContactSection() {
               also contact me directly via email or WhatsApp.
             </p>
           </div>
-        </div>
-      </div>
+          </RevealItem>
+        </StaggerReveal>
+      </Reveal>
     </section>
   );
 }

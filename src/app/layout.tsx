@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "LUMENIX | Raihan Achmad Suhada",
+  title: "Ravion | Raihan Achmad Suhada",
   description:
-    "Personal portfolio of Raihan Achmad Suhada under the LUMENIX identity, focused on web development, business systems, project management, AI-assisted workflows, and digital product delivery.",
+    "Personal portfolio of Raihan Achmad Suhada under the Ravion identity, focused on web development, business systems, project management, AI-assisted workflows, and digital product delivery.",
   keywords: [
-    "LUMENIX",
+    "Ravion",
     "Raihan Achmad Suhada",
     "Fullstack Developer",
     "Project Manager",
@@ -21,15 +21,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Raihan Achmad Suhada" }],
   creator: "Raihan Achmad Suhada",
-  icons: {
-    icon: "/brand/lumenix-icon.png",
-    shortcut: "/brand/lumenix-icon.png",
-    apple: "/brand/lumenix-icon.png",
-  },
   openGraph: {
-    title: "LUMENIX | Raihan Achmad Suhada",
+    title: "Ravion | Raihan Achmad Suhada",
     description:
-      "LUMENIX is the personal brand identity of Raihan Achmad Suhada, representing his work in web development, business systems, project management, AI-assisted workflows, and digital product delivery.",
+      "Ravion is the personal brand identity of Raihan Achmad Suhada, representing his work in web development, business systems, project management, AI-assisted workflows, and digital product delivery.",
     type: "website",
     locale: "en_US",
   },
@@ -39,14 +34,29 @@ const themeScript = `
 (function () {
   try {
     var theme = localStorage.getItem("theme");
-    var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var isDark = theme === "dark";
 
-    if (theme === "dark" || (!theme && systemDark)) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
+    document.documentElement.classList.toggle("dark", isDark);
+
+    var favicon = document.getElementById("theme-favicon");
+    var appleIcon = document.getElementById("theme-apple-icon");
+
+    if (favicon) {
+      favicon.setAttribute(
+        "href",
+        isDark ? "/brand/ravion-icon-dark.png" : "/brand/ravion-icon-light.png"
+      );
     }
-  } catch (error) {}
+
+    if (appleIcon) {
+      appleIcon.setAttribute(
+        "href",
+        isDark ? "/brand/ravion-icon-dark.png" : "/brand/ravion-icon-light.png"
+      );
+    }
+  } catch (error) {
+    document.documentElement.classList.remove("dark");
+  }
 })();
 `;
 
@@ -58,6 +68,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link
+          id="theme-favicon"
+          rel="icon"
+          href="/brand/ravion-icon-light.png"
+        />
+        <link
+          id="theme-apple-icon"
+          rel="apple-touch-icon"
+          href="/brand/ravion-icon-light.png"
+        />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>{children}</body>

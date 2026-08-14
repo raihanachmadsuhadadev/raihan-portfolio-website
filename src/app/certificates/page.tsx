@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { certificates } from "@/data/certificates";
 import { ArrowUpRight, Award, FileText } from "lucide-react";
+import { Reveal, RevealItem, StaggerReveal } from "@/components/ui/Reveal";
 
 export default function CertificatesPage() {
   return (
@@ -17,7 +18,7 @@ export default function CertificatesPage() {
           ← Back to Home
         </Link>
 
-        <div className="max-w-3xl">
+        <Reveal className="max-w-3xl" y={24}>
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
             Certificates
           </p>
@@ -31,14 +32,14 @@ export default function CertificatesPage() {
             programming fundamentals, backend development, API development,
             database usage, and web development.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-16 md:pb-20">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <StaggerReveal className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {certificates.map((certificate, index) => (
+            <RevealItem key={certificate.title}>
             <article
-              key={certificate.title}
               className="group flex h-full flex-col rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)] dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600"
             >
               <div className="mb-5 flex items-start justify-between gap-4">
@@ -82,8 +83,9 @@ export default function CertificatesPage() {
                 </a>
               </div>
             </article>
+            </RevealItem>
           ))}
-        </div>
+        </StaggerReveal>
       </section>
 
       <Footer />

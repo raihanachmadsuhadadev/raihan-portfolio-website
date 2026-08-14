@@ -9,6 +9,7 @@ import { SkillsSection } from "@/components/sections/SkillsSection";
 import { BackToTopButton } from "@/components/ui/BackToTopButton";
 import { Reveal } from "@/components/ui/Reveal";
 import { CertificatesSection } from "@/components/sections/CertificatesSection";
+import { EducationSection } from "@/components/sections/EducationSection";
 
 export default function Home() {
   return (
@@ -29,6 +30,10 @@ export default function Home() {
 
       <Reveal>
         <ExperienceSection />
+      </Reveal>
+
+      <Reveal>
+        <EducationSection />
       </Reveal>
 
       <Reveal>

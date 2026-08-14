@@ -2,6 +2,7 @@ import { ProjectCard } from "@/components/cards/ProjectCard";
 import { projects } from "@/data/projects";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { RevealItem, StaggerReveal } from "@/components/ui/Reveal";
 
 const educationProjects = projects
   .filter((project) => project.group === "education")
@@ -31,16 +32,17 @@ function ProjectPreviewGroup({
         </p>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2">
+      <StaggerReveal className="grid gap-5 md:grid-cols-2">
         {items.map((project, index) => (
+          <RevealItem key={project.title}>
           <ProjectCard
-            key={project.title}
             project={project}
             index={startIndex + index}
             variant="compact"
           />
+          </RevealItem>
         ))}
-      </div>
+      </StaggerReveal>
     </div>
   );
 }

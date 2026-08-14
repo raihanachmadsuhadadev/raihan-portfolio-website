@@ -1,100 +1,36 @@
-import Link from "next/link";
-import { ProjectCard } from "@/components/cards/ProjectCard";
+import { BackToTopButton } from "@/components/ui/BackToTopButton";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
-import { projects } from "@/data/projects";
-
-const educationProjects = projects.filter(
-  (project) => project.group === "education",
-);
-
-const freelanceProjects = projects.filter(
-  (project) => project.group === "freelance",
-);
-
-function ProjectGroupSection({
-  title,
-  description,
-  items,
-}: {
-  title: string;
-  description: string;
-  items: typeof projects;
-}) {
-  return (
-    <section className="mx-auto max-w-6xl px-4 pb-12">
-      <div className="mb-6">
-        <p className="text-sm font-medium uppercase tracking-[0.25em] text-slate-500">
-          Project Category
-        </p>
-
-        <h2 className="mt-2 text-2xl font-semibold text-slate-950">
-          {title}
-        </h2>
-
-        <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-500">
-          {description}
-        </p>
-      </div>
-
-      <div className="grid gap-5 md:grid-cols-2">
-        {items.map((project, index) => (
-          <ProjectCard
-            key={project.title}
-            project={project}
-            index={index}
-            variant="compact"
-          />
-        ))}
-      </div>
-    </section>
-  );
-}
+import { ProjectsExplorer } from "@/components/sections/ProjectsExplorer";
+import { Reveal } from "@/components/ui/Reveal";
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,#dbeafe_0,#f8fafc_35%,#f8fafc_100%)] text-slate-950 dark:bg-[radial-gradient(circle_at_top,#0f172a_0,#020617_45%,#020617_100%)] dark:text-slate-50">
+    <main className="min-h-screen bg-slate-50 text-slate-950 dark:bg-slate-950 dark:text-white">
       <Navbar />
 
-      <section className="mx-auto max-w-6xl px-4 pb-10 pt-28 md:pb-12 md:pt-36">
-        <Link
-          href="/"
-          className="mb-8 inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600 shadow-sm transition hover:border-slate-300 hover:text-slate-950"
-        >
-          ← Back to Home
-        </Link>
-
-        <div className="max-w-3xl">
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-slate-500">
+      <section className="px-4 pb-10 pt-32 md:pt-36">
+        <Reveal className="mx-auto max-w-6xl" y={24}>
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
             Projects
           </p>
 
-          <h1 className="text-4xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-            Complete project collection.
+          <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 md:text-5xl dark:text-white">
+            Selected works and technical projects.
           </h1>
 
-          <p className="mt-4 text-base leading-7 text-slate-600">
-            A complete collection of my education and freelance projects,
-            including decision support systems, inventory systems, workshop
-            management, POS applications, report classification, delivery apps,
-            and company profile websites.
+          <p className="mt-5 max-w-3xl text-base leading-7 text-slate-600 md:text-lg dark:text-slate-300">
+            A curated collection of academic projects, freelance projects, and
+            technical explorations across web development, backend APIs, mobile
+            development, AI, and business systems.
           </p>
-        </div>
+        </Reveal>
       </section>
 
-      <ProjectGroupSection
-        title="Education Projects"
-        description="Projects developed through campus, academic learning, capstone work, and structured education-based development."
-        items={educationProjects}
-      />
-
-      <ProjectGroupSection
-        title="Freelance Projects"
-        description="Projects developed for practical application needs, business workflows, system prototypes, and client-oriented website work."
-        items={freelanceProjects}
-      />
+      <ProjectsExplorer />
 
       <Footer />
+      <BackToTopButton />
     </main>
   );
 }

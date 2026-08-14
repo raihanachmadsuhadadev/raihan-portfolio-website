@@ -1,5 +1,6 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { profile } from "@/data/profile";
+import { RevealItem, StaggerReveal } from "@/components/ui/Reveal";
 
 const focusItems = [
   "Web Developer",
@@ -36,10 +37,11 @@ export function AboutSection() {
       <SectionHeading
         label="About"
         title="A developer with technical execution and project direction."
-        description="LUMENIX is my personal brand identity, representing the way I build digital products with clarity, structured execution, and practical delivery."
+        description="Ravion is my personal brand identity, representing the way I build digital products with clarity, structured execution, and practical delivery."
       />
 
-      <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+      <StaggerReveal className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+        <RevealItem>
         <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm md:p-8">
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-slate-500">
             About Me
@@ -52,7 +54,7 @@ export function AboutSection() {
 
           <div className="mt-5 space-y-4 text-base leading-8 text-slate-600">
             <p>
-              I am Raihan Achmad Suhada, the person behind LUMENIX. I work as a
+              I am Raihan Achmad Suhada, the person behind Ravion. I work as a
               Fullstack Developer and Project Manager focused on web
               applications, admin dashboards, APIs, and database-driven systems.
               I enjoy turning ideas and requirements into structured
@@ -62,14 +64,16 @@ export function AboutSection() {
             <p>
               Beyond coding, I also pay attention to project flow, requirement
               breakdown, technical documentation, and delivery planning. Through
-              LUMENIX, I want to present my work with a clear identity that
+              Ravion, I want to present my work with a clear identity that
               reflects clean execution, practical problem solving, and
               continuous growth across mobile development, AI-assisted
               workflows, DevOps fundamentals, and cybersecurity basics.
             </p>
           </div>
         </div>
+        </RevealItem>
 
+        <RevealItem>
         <aside className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm md:p-8">
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-slate-500">
             Profile
@@ -81,7 +85,7 @@ export function AboutSection() {
             </h3>
 
             <p className="mt-2 text-sm font-medium text-slate-600">
-              LUMENIX Personal Brand Identity
+              Ravion Personal Brand Identity
             </p>
 
             <p className="mt-4 text-sm leading-7 text-slate-500">
@@ -108,14 +112,13 @@ export function AboutSection() {
             </div>
           </div>
         </aside>
-      </div>
+        </RevealItem>
+      </StaggerReveal>
 
-      <div className="mt-6 grid gap-4 md:grid-cols-3">
+      <StaggerReveal className="mt-6 grid gap-4 md:grid-cols-3">
         {workingValues.map((item) => (
-          <div
-            key={item.title}
-            className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm"
-          >
+          <RevealItem key={item.title}>
+          <div className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
             <h3 className="text-base font-semibold text-slate-950">
               {item.title}
             </h3>
@@ -124,8 +127,9 @@ export function AboutSection() {
               {item.description}
             </p>
           </div>
+          </RevealItem>
         ))}
-      </div>
+      </StaggerReveal>
     </section>
   );
 }

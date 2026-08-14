@@ -5,12 +5,32 @@ import { useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
 
+function updateThemeIcon(theme: Theme) {
+  const favicon = document.getElementById("theme-favicon");
+  const appleIcon = document.getElementById("theme-apple-icon");
+
+  const iconPath =
+    theme === "dark"
+      ? "/brand/ravion-icon-dark.png"
+      : "/brand/ravion-icon-light.png";
+
+  favicon?.setAttribute("href", iconPath);
+  appleIcon?.setAttribute("href", iconPath);
+}
+
 export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
-    const isDark = document.documentElement.classList.contains("dark");
-    setTheme(isDark ? "dark" : "light");
+    const frame = window.requestAnimationFrame(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      const currentTheme = isDark ? "dark" : "light";
+
+      setTheme(currentTheme);
+      updateThemeIcon(currentTheme);
+    });
+
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   function toggleTheme() {
@@ -19,6 +39,7 @@ export function ThemeToggle() {
     setTheme(nextTheme);
     localStorage.setItem("theme", nextTheme);
     document.documentElement.classList.toggle("dark", nextTheme === "dark");
+    updateThemeIcon(nextTheme);
   }
 
   return (

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { certificates } from "@/data/certificates";
 import { ArrowUpRight, Award, FileText } from "lucide-react";
+import { RevealItem, StaggerReveal } from "@/components/ui/Reveal";
 
 const previewCertificates = certificates.slice(0, 3);
 
@@ -27,10 +28,10 @@ export function CertificatesSection() {
         </Link>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <StaggerReveal className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {previewCertificates.map((certificate, index) => (
+          <RevealItem key={certificate.title}>
           <article
-            key={certificate.title}
             className="group flex h-full flex-col rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)] dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600"
           >
             <div className="mb-5 flex items-start justify-between gap-4">
@@ -74,8 +75,9 @@ export function CertificatesSection() {
               </a>
             </div>
           </article>
+          </RevealItem>
         ))}
-      </div>
+      </StaggerReveal>
     </section>
   );
 }

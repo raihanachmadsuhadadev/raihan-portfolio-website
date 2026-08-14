@@ -29,19 +29,23 @@ export function IntroLoader() {
               initial={{ opacity: 0, y: 12, scale: 0.96 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="flex items-center justify-center"
+              className="flex flex-col items-center justify-center"
             >
               <Image
-                src="/brand/lumenix-logo.png"
-                alt="LUMENIX"
-                width={420}
-                height={140}
+                src="/brand/ravion-icon-dark.png"
+                alt="Ravion"
+                width={160}
+                height={160}
                 priority
-                className="h-auto w-[260px] object-contain md:w-[300px]"
+                className="h-24 w-24 object-contain md:h-28 md:w-28"
               />
+
+              <p className="mt-5 text-2xl font-semibold tracking-tight text-white md:text-3xl">
+                Ravion
+              </p>
             </motion.div>
 
-            <div className="mt-4 h-1 w-56 overflow-hidden rounded-full bg-white/10 md:w-64">
+            <div className="mt-5 h-1 w-56 overflow-hidden rounded-full bg-white/10 md:w-64">
               <motion.div
                 initial={{ x: "-100%" }}
                 animate={{ x: "100%" }}
